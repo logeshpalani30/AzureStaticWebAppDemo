@@ -3,5 +3,6 @@
 ################################################################################
 
 /.vs/PoliceCasesProject/v16
-/MyPoliceWebApp/bin/Debug/netstandard2.1
+/MyPoliceWebApp/bin
 /MyPoliceWebApp/obj
+/Client/PoliceClientWebApp/obj

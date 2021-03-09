@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{0946F079-2082-48C4-B88E-B9AD81841623}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{20D233AF-BB75-451C-BF50-EB3D6CF18872}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPoliceWebApp", "MyPoliceWebApp\MyPoliceWebApp.csproj", "{EA8FE802-92C6-43A6-9ECC-507CCDA45054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoliceClientWebApp", "Client\PoliceClientWebApp\PoliceClientWebApp.csproj", "{53930F85-F0B5-4981-940D-58EF6E3678FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,16 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA8FE802-92C6-43A6-9ECC-507CCDA45054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA8FE802-92C6-43A6-9ECC-507CCDA45054}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA8FE802-92C6-43A6-9ECC-507CCDA45054}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA8FE802-92C6-43A6-9ECC-507CCDA45054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53930F85-F0B5-4981-940D-58EF6E3678FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53930F85-F0B5-4981-940D-58EF6E3678FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53930F85-F0B5-4981-940D-58EF6E3678FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53930F85-F0B5-4981-940D-58EF6E3678FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{EA8FE802-92C6-43A6-9ECC-507CCDA45054} = {0946F079-2082-48C4-B88E-B9AD81841623}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3F19B47-4A64-4E11-9796-39E9D49ACC6C}
