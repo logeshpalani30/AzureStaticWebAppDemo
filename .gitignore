@@ -6,3 +6,4 @@
 /MyPoliceWebApp/bin
 /MyPoliceWebApp/obj
 /Client/PoliceClientWebApp/obj
+/Client/PoliceClientWebApp/bin/Release/netstandard2.1
