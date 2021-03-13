@@ -1,5 +1,33 @@
 ﻿@page "/"
+@using Client.Models
 
-<h1 class="text-lg-center">Welcome you to choose your career path!</h1>
+<div class="text-center" style="margin-top: 25px">
+    <h3 class="text-body">Welcome you to choose your career path!</h3>
+    <blockquote class="text-body" style="align-content: end"> <u class="text-success">Do what you love!</u> because you can't force yourself todo something!</blockquote>
+</div>
 
+<div>
+    <video src=""></video>
+</div>
 
+<div class="card-columns">
+    @{
+        var data = Paths.CarrerList();
+    }
+    @for (int i = 0; i < data.Count; i++)
+    {
+        <div class="card text-white bg-primary mb-3">
+            <p style="font-size: 15px; margin: 10px; background-color: yellow; padding: 3px 5px 3px 5px;color: black;border-radius: 50px 50px 50px 50px;display: table">Logesh</p>
+            <blockquote class="blockquote mb-0 card-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote">
+                    <small class="text-white">
+                        Someone famous in <cite title="Source Title">Source Title</cite>
+                    </small>
+                </footer>
+            </blockquote>
+        </div>
+    }
+</div>
+<footer class="modal-footer">
+</footer>
