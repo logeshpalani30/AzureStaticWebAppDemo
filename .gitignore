@@ -16,6 +16,7 @@ PoliceCasesProject.sln.DotSettings.user
 PoliceCasesProject.sln.DotSettings.user
 /Client/bin/Debug/netstandard2.1
 *.v2
+/.vs
 .vs/PoliceCasesProject/DesignTimeBuild/.dtbcache.v2
 .vs/PoliceCasesProject/config/debuggerConfiguration-76325ae1-0386-4045-97a2-272b01c4ae24.json
 .vs/PoliceCasesProject/config/applicationhost.config
@@ -23,3 +24,5 @@ PoliceCasesProject.sln.DotSettings.user
 .vs/PoliceCasesProject/config/applicationhost.config
 .vs/PoliceCasesProject/config/applicationhost.config
 .vs/PoliceCasesProject/config/applicationhost.config
+.vs/PoliceCasesProject/DesignTimeBuild/.dtbcache.v2
+*.v2
