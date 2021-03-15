@@ -1,5 +1,12 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+.img {
+    object-fit: cover;
+    object-position: top;
+    height: 200px;
+    width: 200px;
+}
+
 .topnav {
     background-color: #333;
     overflow: hidden;

@@ -10,23 +10,23 @@
     <video src=""></video>
 </div>
 
-<div class="card-columns">
-    @{
-        var data = Paths.CarrerList();
+<div class="row" style="margin-bottom: 20px; padding: 0;">
+    @{  
+        var data = Paths.CarrerList();  
     }
     @for (int i = 0; i < data.Count; i++)
     {
-        <div class="card text-white bg-primary mb-3">
-            <p style="font-size: 15px; margin: 10px; background-color: yellow; padding: 3px 5px 3px 5px;color: black;border-radius: 50px 50px 50px 50px;display: table">Logesh</p>
-            <blockquote class="blockquote mb-0 card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote">
-                    <small class="text-white">
-                        Someone famous in <cite title="Source Title">Source Title</cite>
-                    </small>
-                </footer>
-            </blockquote>
-        </div>
+            <div class="col-sm-3" style="margin-bottom: 20px">
+                <div class="card" style="padding: 0;">
+                    <div class="card-body">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1115&q=80" alt="Mad about waves shampoo" />
+                        <h5 class="card-title" style="margin-top:10px">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Add to cart</a>
+                        <a href="#" class="btn btn-success">Buy now</a>
+                    </div>
+                </div>
+            </div>
     }
 </div>
 <footer class="modal-footer">
