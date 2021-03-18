@@ -26,3 +26,6 @@ PoliceCasesProject.sln.DotSettings.user
 .vs/PoliceCasesProject/config/applicationhost.config
 .vs/PoliceCasesProject/DesignTimeBuild/.dtbcache.v2
 *.v2
+/BlazorApp.Model/obj/Debug/netcoreapp3.1
+/BlazorApp.Model/obj
+/BlobCheck
