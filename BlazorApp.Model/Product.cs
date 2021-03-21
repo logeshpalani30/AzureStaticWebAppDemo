@@ -4,7 +4,7 @@ using System.IO;
 
 namespace BlazorApp.Model
 {
-    public class AddProductModel
+    public class Product
     {
         public int Id { get; set; }
         public string ProductName { get; set; }
@@ -14,7 +14,8 @@ namespace BlazorApp.Model
         public int OfferPrice { get; set; }
         public List<string> Categories { get; set; }
         public string OrderedCount { get; set; }
-        public List<ImageFile> ImageUrls { get; set; }
+        public List<ImageFile> ImageFiles { get; set; }
+        public List<string> ImageUrls { get; set; }
         public int Likes { get; set; }
         public bool IsRecommended { get; set; }
     }

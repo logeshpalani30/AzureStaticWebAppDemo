@@ -8,6 +8,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace Api
 {
     public class AddProduct
     {
-        string connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+        string connectionString = Environment.GetEnvironmentVariable("BlobConnectionString");
         private BlobContainerClient containerClient;
         private BlobServiceClient blobServiceClient;
         private string containerName;
@@ -25,23 +26,40 @@ namespace Api
             CreateOrGetContainerClientAsync().Wait();
         }
 
-        [FunctionName("AddProduct")]
+        [FunctionName(nameof(AddProduct))]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
+            [CosmosDB(
+                databaseName:"ProductDb",
+                collectionName:"products",
+                PartitionKey="/loki30",
+                ConnectionStringSetting ="CosmosDbConnectionString")]IAsyncCollector<object> products,
             ILogger log)
         {
-            log.LogInformation("Add Product : C# HTTP trigger function processed a request.");
-
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            var data = JsonConvert.DeserializeObject<AddProductModel>(requestBody);
-
-            if (data !=null)
+            try
             {
-                var url = UploadImage(data.ImageUrls[0].FileName, data.ImageUrls[0].FileStream).Result;
+                log.LogInformation("Add Product : C# HTTP trigger function processed a request.");
 
+                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+                var productItem = JsonConvert.DeserializeObject<Product>(requestBody);
+
+                if (productItem != null)
+                {
+                     var url = UploadImage(Guid.NewGuid().ToString(), productItem.ImageFiles[0].FileStream).Result;
+                     productItem.ImageUrls=new List<string>()
+                     {
+                         url
+                     };
+                    await products.AddAsync(productItem);
+
+                    return new OkObjectResult($"Product added \n {productItem}");
+                }
             }
-
-            return new OkObjectResult("Product added");
+            catch (Exception e)
+            {
+                log.LogInformation("Add Product Error");
+            }
+            return new BadRequestResult();
         }
         private async Task CreateOrGetContainerClientAsync()
         {
@@ -75,9 +93,7 @@ namespace Api
                     Console.WriteLine("Uploading to Blob storage as blob:\n\t {0}\n", containerClient.Uri);
 
                     // using FileStream uploadFileStream = File.OpenRead(name);
-
-                    if (stream != null)
-                        await blobClient.UploadAsync(stream, true);
+                    await blobClient.UploadAsync(stream, true);
 
                     return blobClient.Uri.AbsoluteUri;
                 }
