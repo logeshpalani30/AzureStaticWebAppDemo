@@ -1,6 +1,6 @@
 {
-  "name": "Client",
-  "short_name": "Client",
+  "name": "Azure Store",
+  "short_name": "Azure Store",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -1,14 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
-namespace Client.Models
+namespace BlazorApp.Model
 {
-    public class Paths
-    {
-        public static List<string> CarrerList()
-        {
-            return new List<string>() {"Logesh", "Palani", "Guna", "Meena", "Palani", "Guna", "Meena", "Logesh", "Palani", "Guna", "Meena" };
-        }
-    }
     public class Product
     {
         public int Id { get; set; }
@@ -19,8 +14,15 @@ namespace Client.Models
         public int OfferPrice { get; set; }
         public List<string> Categories { get; set; }
         public string OrderedCount { get; set; }
+        public List<ImageFile> ImageFiles { get; set; }
         public List<string> ImageUrls { get; set; }
         public int Likes { get; set; }
         public bool IsRecommended { get; set; }
+    }
+    public class ImageFile
+    {
+        public FileStream FileStream { get; set; }
+        public string FileName { get; set; }
+        public string Url { get; set; } = string.Empty;
     }
 }
