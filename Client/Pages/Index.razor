@@ -1,5 +1,7 @@
 ﻿@page "/"
 @using Client.Models
+@using System.Net.Http
+@inherits IndexBase
 
 <div class="text-center" style="margin-top: 25px">
     <h3 class="text-body">Welcome you to choose your career path!</h3>
@@ -9,25 +11,24 @@
 <div>
     <video src=""></video>
 </div>
-
 <div class="row" style="margin-bottom: 20px; padding: 0;">
-    @{  
-        var data = Paths.CarrerList();  
-    }
-    @for (int i = 0; i < data.Count; i++)
+    @foreach (var product in _products)
     {
-            <div class="col-sm-3" style="margin-bottom: 20px">
-                <div class="card" style="padding: 0;">
-                    <div class="card-body">
-                        <img class="card-img-top" src="https://azkonfblob.blob.core.windows.net/konfproducts/Veirdo-100-Percent-Cotton-Green-SDL302071272-1-1ce9d.jpeg?sp=r&st=2021-03-15T19:52:21Z&se=2021-03-16T03:52:21Z&spr=https&sv=2020-02-10&sr=b&sig=03%2FBd6IqR5pQmpcsplJyrRaW6ETniveEViwLcCY5LKw%3D" alt="Mad about waves shampoo" />
-                        <h5 class="card-title" style="margin-top:10px">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Add to cart</a>
-                        <a href="#" class="btn btn-success">Buy now</a>
-                    </div>
+        <div class="col-sm-3" style="margin-bottom: 20px">
+            <div class="card" style="padding: 0;">
+                <div class="card-body">
+                    <img class="card-img-top" src="https://azkonfblob.blob.core.windows.net/konfproducts/Veirdo-100-Percent-Cotton-Green-SDL302647052-1-0a0ca.jpeg" alt="Mad about waves shampoo" />
+                    <h5 class="card-title" style="margin-top:10px">T-Shirt</h5>
+                    <p class="card-text">Explore the massive collection of T-shirt online for men, women & kids in India. Check out T-shirts from top brands available in various sizes, fabrics, colours ...
+                    </p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                    <a href="#" class="btn btn-success">Buy now</a>
                 </div>
             </div>
+        </div>
     }
 </div>
+
 <footer class="modal-footer">
 </footer>
+
